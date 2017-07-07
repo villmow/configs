@@ -1,0 +1,42 @@
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" Plugin Manager Pathogen"
+execute pathogen#infect()
+
+" Make backspace behave in a sane manner.
+set backspace=indent,eol,start
+
+" Switch syntax highlighting on
+syntax on
+
+" Enable file type detection and do language-dependent indenting.
+filetype plugin indent on
+
+" Show line numbers
+set number
+set relativenumber
+
+" Allow hidden buffers, don't limit to 1 file per window/split
+set hidden
+
+""""""""""""""""""""
+"Markdown
+""""""""""""""""""""
+let g:markdown_enable_spell_checking = 0
+
+""""""""""""""""""""
+"Python
+""""""""""""""""""""
+let python_highlight_all=1
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+""""""""""""""""""""
+"Color
+""""""""""""""""""""
+let g:molokai_original=1
+colo molokai
+
