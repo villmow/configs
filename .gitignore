@@ -1,0 +1,7 @@
+# Jetbrains IDE Files
+.idea/
+
+# Pathogen Script gets downloaded when executing install.sh
+.vim/autoload/pathogen.vim
+
+
