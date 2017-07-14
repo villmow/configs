@@ -1,0 +1,34 @@
+Host hsrm.login1
+  User jvill001
+  Hostname login1.cs.hs-rm.de
+
+Host hsrm.login3
+  Hostname login3.mi.hs-rm.de
+  User jvill001
+
+Host hsrm.marconet
+  User johannes
+  Hostname 172.26.90.202
+  ProxyCommand ssh -q -a -X hsrm.login3 nc %h 22
+
+Host hsrm.cuda2
+  User jvill001
+  Hostname cuda2.local.cs.hs-rm.de
+  ProxyCommand ssh -q -a -X hsrm.login3 nc %h 22
+
+Host hsrm.cccompute2
+  User jvill001
+  Hostname cccompute2.local.cs.hs-rm.de
+  ProxyCommand ssh -q -a -X hsrm.login3 nc %h 22
+
+Host hsrm.intern.marconet
+  User johannes
+  Hostname 172.26.90.202
+
+Host hsrm.intern.cuda2
+  User jvill001
+  Hostname cuda2.local.cs.hs-rm.de
+
+Host hsrm.intern.cccompute2
+  User jvill001
+  Hostname cccompute2.local.cs.hs-rm.de
