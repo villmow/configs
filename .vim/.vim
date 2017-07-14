@@ -1,0 +1,1 @@
+/home/jo/configs/.vim
