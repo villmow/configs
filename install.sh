@@ -12,7 +12,7 @@ git submodule update --init
 #         VIM         #
 #######################
 echo "[vim] downloading newest version of pathogen (vim packet manager)"
-# curl -LSso ${BASE_DIR}/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+curl -LSso ${BASE_DIR}/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # create symlink for vim folder and vimrc
 echo "[vim] creating symlink for vim configuration files"
@@ -57,18 +57,3 @@ done < $BASE_DIR/nanorc/nanorc
 
 echo "[tmux] creating symlink for tmux conf"
 ln -fs $BASE_DIR/.tmux_conf ~/.tmux_conf
-
-#######################
-#        SSH          #
-#######################
-
-SSH_CONF_FILE=~/.ssh/config
-
-if [ ! -f $SSH_CONF_FILE ]
-then
-    echo "[ssh] creating symlink for ssh config file"
-    ln -sf $BASE_DIR/ssh-config/config $SSH_CONF_FILE
-else
-    echo "[ssh] ssh config file already exists, overwriting it"
-    ln -sf $BASE_DIR/ssh-config/config $SSH_CONF_FILE
-fi
